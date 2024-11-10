@@ -93,11 +93,11 @@ class Keyboard:
         """
         for i, letter in enumerate(guessed_word):
             feedback_color = feedback_colors[i]
-        if feedback_color == CORRECT_COLOR:
-            self.colors[letter] = CORRECT_COLOR
-        elif feedback_color == NOT_IN_WORD_COLOR:
-            if self.colors[letter] != CORRECT_COLOR:
-                self.colors[letter] = NOT_IN_WORD_COLOR
+            if feedback_color == CORRECT_COLOR:
+                self.colors[letter] = CORRECT_COLOR
+            elif feedback_color == NOT_IN_WORD_COLOR:
+                if self.colors[letter] != CORRECT_COLOR:
+                    self.colors[letter] = NOT_IN_WORD_COLOR
 
     # TODO: Modify this method. You may delete this comment when you are done.
     def __str__(self):
@@ -411,7 +411,6 @@ def get_feedback(remaining_secret_words, guessed_word):
     sorted_families = fast_sort(word_family_list)
     hardest_family = sorted_families[0]
     return hardest_family.feedback_colors, hardest_family.words
-
 # DO NOT modify this function.
 def main():
     """
